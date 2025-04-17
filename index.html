@@ -88,7 +88,7 @@
         copyBtn.textContent = "🔗";
         copyBtn.title = "Copy URL";
         copyBtn.addEventListener("click", () => {
-          const fullUrl = `${BASE_URL}/icons/${filename}`;
+          const fullUrl = `${BASE_URL}/${filename}`;
           navigator.clipboard.writeText(fullUrl).then(() => {
             copyBtn.textContent = "✅";
             setTimeout(() => (copyBtn.textContent = "🔗"), 1000);
