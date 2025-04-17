@@ -43,7 +43,7 @@
     // Your Firebase URL base
     const BASE_URL = "https://lios-open.web.app/icons/icons";
   
-    fetch("../../data/icons.json")
+    fetch("../data/icons.json")
       .then(res => res.json())
       .then(data => {
         icons = data;
@@ -66,7 +66,7 @@
         card.className = "icon-card";
   
         const img = document.createElement("img");
-        img.src = `./${filename}`;
+        img.src = `./icons/${filename}`;
         img.alt = filename;
   
         const name = document.createElement("div");
@@ -78,7 +78,7 @@
   
         // Download link
         const downloadBtn = document.createElement("a");
-        downloadBtn.href = `./${filename}`;
+        downloadBtn.href = `./icons/${filename}`;
         downloadBtn.download = filename;
         downloadBtn.textContent = "⬇️";
         downloadBtn.title = "Download";
@@ -88,7 +88,7 @@
         copyBtn.textContent = "🔗";
         copyBtn.title = "Copy URL";
         copyBtn.addEventListener("click", () => {
-          const fullUrl = `${BASE_URL}/${filename}`;
+          const fullUrl = `${BASE_URL}/icons/${filename}`;
           navigator.clipboard.writeText(fullUrl).then(() => {
             copyBtn.textContent = "✅";
             setTimeout(() => (copyBtn.textContent = "🔗"), 1000);
